@@ -7,19 +7,20 @@
 
 
 body{
-    
+    background: linear-gradient(to right, #5c4ce7,rgba(77, 183, 187, 0.867));
 }
 header{
     width: 100%;
  
-    background-color: #dfdfdf;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.567);
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
      font-weight: bold;
     align-items: center;
     padding: 30px;
+    box-shadow: inset 0 0 1px  rgba(0, 0, 0, .2);
 
 }
 
@@ -33,11 +34,15 @@ header{
     margin: auto;
     width: 80%;
     padding: 3rem 2rem;
+   
 
 }
 #my-form{
-    background-color: #f2f2f2;
+    background-color: rgba(0, 0, 0, .2);
+
     padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2) ;
 }
 #my-form .title{
     text-align: center;
@@ -78,8 +83,42 @@ label{
     
 }
 
+ul{
+  list-style-position: inside;
+
+ }
+ 
+ ul li{
+    padding: .9rem;
+    background: rgba(0, 0, 0, 0.567);
+    margin: 30px 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .2) ;
+ }
 
 .error-msg{
     color: red;
     font-weight: normal;
+}
+
+
+ .list-tag input[type = 'checkbox']  {
+     width: 20px;
+    height: 20px; 
+    float: right;
+     
+    vertical-align: text-top;
+    background-color: #dfdfdf;
+    color: black;
+    -webkit-transition: all 250ms ease;
+    transition: allall 250ms ease;
+}
+
+.list-tag input[type = 'checkbox']:checked{
+    
+    background:  #5c4ce7;
+    color: white;  
+    
 }
