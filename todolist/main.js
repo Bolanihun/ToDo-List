@@ -3,13 +3,7 @@ const todoList = document.querySelector('#display-list')
 const errorMsg = document.querySelector('.error-msg')
 const inputList = document.querySelector('#name')
 let myList =  []
-const InputStorage = JSON.parse(localStorage.getItem("myList"))
-
-// if(InputStorage){
-//     myList = InputStorage
-//     createList(myList)
-//   }
-
+// const InputStorage = JSON.parse(localStorage.getItem('myList'))
 addBtn.addEventListener('click', (e) =>{
     e.preventDefault()
     console.log('click')
@@ -22,7 +16,7 @@ addBtn.addEventListener('click', (e) =>{
         inputList.value = ''
         localStorage.setItem("myList", JSON.stringify(myList))
         createList(myList) 
-        console.log(localStorage.getItem(myList))
+        //console.log(localStorage.getItem(myList))
     }
 })
 function createList(newlist){
@@ -34,12 +28,21 @@ function createList(newlist){
     </li>`
   }
    todoList.innerHTML = listDisplay
-   let tasklist = document.querySelector(".completed")
-   for(let i = 0; i < tasklist.length; i++){
-    tasklist[i].onchecked = () =>{
-        this.parentNode.remove()
-    }
-   }
+   let tasklist = document.getElementsByClassName('.completed')
 
+   console.log(tasklist)
+  // for(let i = 0; i < tasklist.length; i++){
+    
+      //tasklist.addEventListener("change", function(){
+      //   if(this.checked){
+      //     // this.parentNode.remove()
+      //     console.log("okay")
 
+      //   }
+      //   else{
+      //     console.log("okay 5")
+      //   }
+      // })
+    
+ // }
 }
