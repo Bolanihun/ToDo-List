@@ -25,7 +25,7 @@ function createList(newlist){
   for(let i = 0; i < newlist.length; i++){
     listDisplay += `
     <li class="list-tag">${newlist[i]}  
-      <input class='completed' type='checkbox' >
+      <input class='completed' type='checkbox' onClick= "deleteItems(${i})" > // And here I made use of the deleteItems function and added an onclick eventlistner to the checkbox
     </li>`
   }
    todoList.innerHTML = listDisplay
@@ -33,21 +33,30 @@ function createList(newlist){
 
    console.log(tasklist)
 
-  //for(let i = 0; i < tasklist.length; i++){
+  */for(let i = 0; i < tasklist.length; i++){
     
-      tasklist.addEventListener("change", function(){
+      /*tasklist.addEventListener("change", function(){
        if(this.checked){
          this.parentNode.remove()
-           console.log("okay")
+         //this.remove()
+           console.log("okay") 
 
          }
        else{
          console.log("okay 5")
         }
-       })
+       })*/
     
  // }
 
  // The code just add the past checked list on every list item added
  //The this.checked condition only works for the first input
+}
+
+/*This is the deleteItems function*/
+function deleteItems(index) {
+  let InputStorage = JSON.parse(localStorage.getItem('myList'))
+  myList.splice(index, 1)
+  localStorage.setItem("myList", JSON.stringify(myList))
+  createList(myList)
 }
